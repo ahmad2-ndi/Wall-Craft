@@ -1,0 +1,1203 @@
+ya user aur admin link open q nahi ho rahe<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall Crafter | Custom Wall Panels & CNC Designs</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="brand-logo cnc-brand" onclick="showView('view-landing')" title="Wall Crafter Home">
+            <span class="cnc-mark">WC</span><span class="brand-name">Wall Crafter</span>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="nav-toggle" id="nav-toggle-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="nav-menu" id="nav-menu">
+            <a href="javascript:void(0)" class="nav-link active" id="nav-item-landing"
+                onclick="showView('view-landing')">
+                <i class="fa-solid fa-house"></i> Home
+            </a>
+            <a href="javascript:void(0)" class="nav-link" id="nav-item-about" onclick="showView('view-about')">
+                <i class="fa-solid fa-circle-info"></i> About Us
+            </a>
+            <a href="javascript:void(0)" class="nav-link" id="nav-item-courses" onclick="showView('view-courses')">
+                <i class="fa-solid fa-grid-2"></i> Shop
+            </a>
+            <a href="javascript:void(0)" class="nav-link" id="nav-item-contact" onclick="showView('view-contact')">
+                <i class="fa-solid fa-envelope"></i> Contact
+            </a>
+        </div>
+
+        <div class="nav-actions">
+            <button type="button" class="cart-trigger" onclick="openCart()" aria-label="Open shopping cart" title="Shopping cart">
+                <i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span>
+            </button>
+            <div id="nav-user-container">
+                <button type="button" class="btn btn-outline btn-sm" onclick="showView('view-signup')">
+                    <i class="fa-solid fa-user-plus"></i> Sign Up
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="showView('view-login')">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dynamic Application Container -->
+    <main class="main-content" id="main-app">
+
+        <!-- 1. HOME VIEW (view-landing) -->
+        <section id="view-landing" class="view-section">
+            <!-- Hero Banner -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-sparkles"></i> Wall Crafter Collection</span>
+                    <h1>Crafted pieces that bring character to every wall.</h1>
+                    <p>Shop custom wall panels, geometric screens, modern railings, and beautifully detailed Quran holders made for meaningful spaces.</p>
+                    <div class="hero-actions">
+                        <button type="button" class="btn btn-orange btn-lg" onclick="showView('view-courses')">
+                            <i class="fa-solid fa-bag-shopping"></i> Shop All Products
+                        </button>
+                        <button type="button" class="btn btn-outline-white btn-lg" onclick="showView('view-courses')">
+                            <i class="fa-solid fa-arrow-right"></i> Browse Bestsellers
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-product-spotlight">
+                    <div class="spotlight-label"><i class="fa-solid fa-cube"></i> Signature CNC Finish</div>
+                    <img src="assets/Quran%20holder.jpeg" alt="Wall Crafter CNC Quran holder">
+                    <div class="spotlight-caption">
+                        <div><strong>CNC Quran Holder</strong><span>Intricate Islamic decor</span></div>
+                        <b>Rs. 4,500</b>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Counter Bar -->
+            <div class="stats-bar">
+                <div class="stat-card">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <div class="stat-number">1,500+</div>
+                    <div class="stat-label">Custom Designs</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-award"></i>
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Premium Finish</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">CNC Products</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-certificate"></i>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Secure Orders</div>
+                </div>
+            </div>
+
+            <!-- Featured Courses Preview -->
+            <div class="section-header" style="margin-top: 30px;">
+                <div class="section-title">
+                        <i class="fa-solid fa-star" style="color: var(--orange-main);"></i> Featured CNC Products
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="showView('view-courses')">
+                    View All Products <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="courses-grid" id="public-courses-grid">
+                <!-- Courses injected via JS -->
+            </div>
+
+            <!-- Why Choose Wall Crafter Section -->
+            <div class="features-section">
+                <div class="section-header center">
+                    <h2 class="section-heading"><i class="fa-solid fa-shield-halved"
+                                style="color: var(--orange-main);"></i> Why Choose Wall Crafter?</h2>
+                            <p class="section-subheading">Quality patterns, strong materials, and designs made to give every project a signature finish.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <h3>Custom CNC Patterns</h3>
+                        <p>Choose from distinctive designs or share your own pattern for a custom cut.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3>Precision Cutting</h3>
+                        <p>Detailed CNC cutting gives every panel a clean, consistent, and premium finish.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <h3>Made For Your Space</h3>
+                        <p>Our designs suit homes, offices, entrances, staircases, balconies, and partitions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <h3>Order Support</h3>
+                        <p>Share your measurements or requirements and our team will guide your order.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home Call To Action -->
+            <div class="cta-banner">
+                <div>
+                    <h2>Ready to upgrade your digital toolkit?</h2>
+                    <p>Choose a product today and start building better work, better skills, and better opportunities.</p>
+                </div>
+                <button type="button" class="btn btn-orange btn-lg" onclick="showView('view-courses')">
+                    <i class="fa-solid fa-bag-shopping"></i> Shop The Collection
+                </button>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT VIEW (view-about) -->
+        <section id="view-about" class="view-section" style="display: none;">
+            <div class="page-title-banner">
+                <div>
+                    <h1><i class="fa-solid fa-building-columns" style="color: var(--orange-light);"></i> About Wall Crafter</h1>
+                    <p>Quality CNC designs and precision-cut products for homes, businesses, and architectural projects.</p>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-img-wrapper">
+                        <img src="assets/CNC%201.jpg"
+                            alt="Wall Crafter product collection">
+                    </div>
+                    <div class="about-text">
+                        <span class="badge badge-orange"><i class="fa-solid fa-award"></i> Crafted For Your Space</span>
+                        <h2>Walls With A Point Of View</h2>
+                        <p>Wall Crafter brings precision-cut wall panels, screens, railings, and architectural details together in one refined collection.</p>
+                        <p>From a statement feature wall to a custom staircase railing, we turn patterns and measurements into pieces that make a space feel considered.</p>
+                    </div>
+                </div>
+
+                <!-- Mission & Vision Cards -->
+                <div class="mv-grid">
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3>Our Mission</h3>
+                        <p>To make distinctive, durable wall and CNC designs easy to explore, customise, and order.</p>
+                    </div>
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+                        <h3>Our Vision</h3>
+                        <p>To become a trusted CNC design and fabrication partner for homes, businesses, and builders across Pakistan.</p>
+                    </div>
+                </div>
+
+                <!-- Core Values -->
+                <div class="section-header" style="margin-top: 40px;">
+                    <div class="section-title">
+                        <i class="fa-solid fa-heart" style="color: var(--orange-main);"></i> What We Stand For
+                    </div>
+                </div>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fa-solid fa-handshake"></i>
+                        <h4>Clear Communication</h4>
+                        <p>Transparent product details, measurements, pricing, and order guidance from start to finish.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <h4>Precision First</h4>
+                        <p>We care about clean cuts, balanced patterns, strong materials, and a finish that lasts.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-people-group"></i>
+                        <h4>Made For You</h4>
+                        <p>Every project can be adapted to your wall, entrance, staircase, partition, or design brief.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SHOP VIEW (view-courses) -->
+        <section id="view-courses" class="view-section" style="display: none;">
+            <div class="page-title-banner">
+                <div>
+                    <h1><i class="fa-solid fa-store" style="color: var(--orange-light);"></i> Shop Digital Products</h1>
+                    <p>Explore decorative CNC panels, architectural screens, and custom metal railing designs.</p>
+                </div>
+            </div>
+
+            <!-- Search & Filter Controls -->
+            <div class="courses-filter-bar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="course-search-input"
+                        placeholder="Search products, categories, or skills..."
+                        oninput="handleCourseSearch(event)">
+                </div>
+                <div class="category-pills" id="course-category-pills">
+                    <button type="button" class="pill-btn active" onclick="filterCoursesCategory('all', this)">All
+                        Products</button>
+                    <button type="button" class="pill-btn"
+                        onclick="filterCoursesCategory('Decorative Panels', this)">Decorative Panels</button>
+                    <button type="button" class="pill-btn" onclick="filterCoursesCategory('Laser Cut Designs', this)">Laser Cut Designs</button>
+                    <button type="button" class="pill-btn"
+                        onclick="filterCoursesCategory('Metal Railing', this)">Metal Railing</button>
+                    <button type="button" class="pill-btn"
+                        onclick="filterCoursesCategory('Islamic Decor', this)">Islamic Decor</button>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="courses-grid" id="courses-page-grid">
+                <!-- Populated via JS -->
+            </div>
+        </section>
+
+        <!-- 4. ADMISSION VIEW (view-admission) -->
+        <section id="view-admission" class="view-section" style="display: none;">
+            <div class="page-title-banner">
+                <div>
+                    <h1><i class="fa-solid fa-receipt" style="color: var(--orange-light);"></i> Order Support &
+                        Checkout</h1>
+                    <p>Complete your order securely and send your payment receipt for quick verification.</p>
+                </div>
+            </div>
+
+            <!-- Admission Steps Roadmap -->
+            <div class="admission-roadmap">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h4>Select Product</h4>
+                    <p>Choose a digital product from our collection.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h4>Transfer Fee</h4>
+                    <p>Send the course fee via JazzCash, EasyPaisa, or Meezan Bank.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h4>Submit Trx ID</h4>
+                    <p>Enter your payment Transaction ID in our enrollment form.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h4>Order Confirmed</h4>
+                    <p>We verify your payment and send your product access details.</p>
+                </div>
+            </div>
+
+            <div class="admission-grid">
+                <!-- Application Form -->
+                <div class="admission-form-wrapper">
+                    <h3><i class="fa-solid fa-box-open" style="color: var(--orange-main);"></i> Place an Order</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-body); margin-bottom: 18px;">Share your details and payment reference so we can process your order.</p>
+
+                    <form id="admission-online-form" onsubmit="handleAdmissionSubmit(event)">
+                        <div class="form-group">
+                            <label for="adm-course-select"><i class="fa-solid fa-box"></i> Select Product
+                                *</label>
+                            <select id="adm-course-select" class="form-control" required>
+                                <option value="">-- Choose Product --</option>
+                                <option value="cnc-leaf-panel">CNC Decorative Leaf Panel (Rs. 8,500)</option>
+                                <option value="cnc-geometric-screen">CNC Geometric Screen Collection (Rs. 12,000)</option>
+                                <option value="cnc-stair-railing">CNC Modern Stair Railing (Rs. 45,000)</option>
+                            </select>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div class="form-group">
+                                <label for="adm-name">Full Name *</label>
+                                <input type="text" id="adm-name" class="form-control" placeholder="e.g. Usman Ahmed"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adm-phone">WhatsApp / Phone *</label>
+                                <input type="text" id="adm-phone" class="form-control" placeholder="e.g. 0300-1234567"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adm-email">Email Address *</label>
+                            <input type="email" id="adm-email" class="form-control" placeholder="e.g. usman@gmail.com"
+                                required>
+                        </div>
+
+                        <div class="form-group"
+                            style="background: #fff8f3; padding: 15px; border-radius: var(--radius-md); border: 1.5px solid var(--orange-main);">
+                            <label for="adm-trx" style="color: var(--orange-main); font-weight: 700;">
+                                <i class="fa-solid fa-receipt"></i> Payment Transaction ID (Trx ID) *
+                            </label>
+                            <input type="text" id="adm-trx" class="form-control" placeholder="e.g. TRX998877123"
+                                required style="border-color: var(--orange-main); font-weight: 700;">
+                        </div>
+
+                        <button type="submit" class="btn btn-orange" style="width: 100%; margin-top: 10px;">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Order Request
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Fee Structure & Requirements -->
+                <div class="admission-info-wrapper">
+                    <h3><i class="fa-solid fa-table-list" style="color: var(--blue-main);"></i> Product Pricing</h3>
+                    <table class="fee-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Production</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CNC Leaf Panel</td>
+                                <td>Made to order</td>
+                                <td><strong style="color: var(--orange-main);">Rs. 8,500</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Geometric Screen</td>
+                                <td>Made to order</td>
+                                <td><strong style="color: var(--orange-main);">Rs. 12,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Modern Stair Railing</td>
+                                <td>Custom fabrication</td>
+                                <td><strong style="color: var(--orange-main);">Rs. 45,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Custom CNC Design</td>
+                                <td>Contact us</td>
+                                <td><strong style="color: var(--orange-main);">Quote</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div
+                        style="background: white; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-top: 20px;">
+                        <h4 style="margin-bottom: 10px; color: var(--blue-dark);"><i class="fa-solid fa-circle-check"
+                                style="color: var(--success);"></i> Minimum Requirements</h4>
+                        <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text-body); line-height: 1.8;">
+                            <li>Basic computer usage & internet navigation skills.</li>
+                            <li>Personal laptop or desktop PC (for practical assignments).</li>
+                            <li>Enthusiasm and dedication to complete course modules.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TEAM VIEW (view-team) -->
+        <section id="view-team" class="view-section" style="display: none;">
+            <div class="page-title-banner">
+                <div>
+                    <h1><i class="fa-solid fa-users" style="color: var(--orange-light);"></i> Meet Our Expert
+                        Instructors & Leadership</h1>
+                    <p>Learn directly from senior software engineers, top-rated freelancers, and e-commerce specialists.
+                    </p>
+                </div>
+            </div>
+
+            <div class="team-grid" id="team-cards-grid">
+                <!-- Rendered dynamically via JS -->
+            </div>
+
+            <div class="cta-banner"
+                style="margin-top: 40px; background: linear-gradient(135deg, var(--blue-dark), var(--blue-main));">
+                <div>
+                    <h2>Are You an Industry Expert? Join SkillzHub Faculty</h2>
+                    <p>We are always expanding our team of instructors and student mentors. Apply to teach at SkillzHub
+                        today.</p>
+                </div>
+                <button type="button" class="btn btn-orange" onclick="showView('view-contact')">
+                    <i class="fa-solid fa-handshake"></i> Become an Instructor
+                </button>
+            </div>
+        </section>
+
+        <!-- 6. TESTIMONIALS VIEW (view-testimonials) -->
+        <section id="view-testimonials" class="view-section" style="display: none;">
+            <div class="page-title-banner">
+                <div>
+                    <h1><i class="fa-solid fa-quote-right" style="color: var(--orange-light);"></i> Student Reviews &
+                        Success Stories</h1>
+                    <p>Discover how SkillzHub graduates transformed their careers and launched successful freelance
+                        businesses.</p>
+                </div>
+            </div>
+
+            <!-- Rating Overview Bar -->
+            <div class="rating-bar">
+                <div style="font-size: 2.8rem; font-weight: 800; color: var(--orange-main);">4.9 / 5.0</div>
+                <div style="font-size: 1.2rem; color: #f59e0b;"><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i></div>
+                <div style="font-size: 0.9rem; color: var(--text-body);">Based on 500+ verified student ratings</div>
+            </div>
+
+            <div class="testimonials-grid" id="testimonials-cards-grid">
+                <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- Review Submission Form -->
+            <div class="review-form-wrapper">
+                <h3><i class="fa-solid fa-comment-dots" style="color: var(--orange-main);"></i> Are You a SkillzHub
+                    Student? Share Your Feedback</h3>
+                <form id="review-submit-form" onsubmit="handleReviewSubmit(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label for="rev-name">Your Full Name</label>
+                            <input type="text" id="rev-name" class="form-control" placeholder="e.g. Ali Raza" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rev-course">Course Completed</label>
+                            <input type="text" id="rev-course" class="form-control" placeholder="e.g. Web Development"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="rev-text">Your Review / Career Impact</label>
+                        <textarea id="rev-text" class="form-control" rows="3"
+                            placeholder="Tell us how the course helped your career or freelance earnings..."
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="rev-photo">Attach Your Photo</label>
+                        <input type="file" id="rev-photo" class="form-control" accept="image/*" onchange="previewReviewPhoto(event)">
+                        <div id="rev-photo-preview-wrapper" style="display: none; margin-top: 10px;">
+                            <img id="rev-photo-preview" src="" alt="Review photo preview" style="width: 90px; height: 90px; object-fit: cover; border-radius: 50%; border: 2px solid var(--orange-main); background: #fff7ed;">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit
+                        Feedback</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 7. CONTACT VIEW (view-contact) -->
+        <section id="view-contact" class="view-section" style="display: none;">
+            <div class="page-title-banner">
+                <div>
+                    <h1><i class="fa-solid fa-envelope" style="color: var(--orange-light);"></i> Contact Us & Get in
+                        Touch</h1>
+                    <p>Have questions about courses, admissions, or fees? Our admissions support team is here to assist
+                        you.</p>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info Cards -->
+                <div class="contact-cards-column">
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Phone & WhatsApp Support</h4>
+                            <p>+92 313 6919958 / +92 329 1455877</p>
+                            <span class="badge badge-success">Mon - Sat: 9 AM - 8 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Official Email Address</h4>
+                            <p>officialskillzhub@gmail.com</p>
+                            <span class="badge badge-blue">Response within 24 Hours</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Campus Address</h4>
+                            <p>Supperior high School Imamia colony st # 3, Gojra, Punjab, Pakistan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Message Form -->
+                <div class="contact-form-wrapper">
+                    <h3><i class="fa-solid fa-paper-plane" style="color: var(--orange-main);"></i> Send Us a Direct
+                        Message</h3>
+                    <form id="contact-message-form" onsubmit="handleContactSubmit(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div class="form-group">
+                                <label for="c-name">Full Name *</label>
+                                <input type="text" id="c-name" class="form-control" placeholder="e.g. Bilal Ahmed"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-email">Email Address *</label>
+                                <input type="email" id="c-email" class="form-control" placeholder="e.g. bilal@gmail.com"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-phone">Contact Number *</label>
+                            <input type="tel" id="c-phone" class="form-control" placeholder="e.g. 0300-1234567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-subject">Subject</label>
+                            <input type="text" id="c-subject" class="form-control"
+                                placeholder="e.g. Admission Inquiry for Web Dev">
+                        </div>
+                        <div class="form-group">
+                            <label for="c-message">Your Message *</label>
+                            <textarea id="c-message" class="form-control" rows="4"
+                                placeholder="Write your inquiry or question here..." required></textarea>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 10px;">
+                            <button type="submit" class="btn btn-orange"><i class="fa-solid fa-paper-plane"></i> Send
+                                Message</button>
+                            <a href="https://wa.me/923136919958?text=Hello%20SkillzHub%2C%20I%20want%20to%20ask%20about%20your%20courses%20and%20admissions."
+                               class="btn btn-secondary" target="_blank" rel="noopener noreferrer"
+                               style="display: inline-flex; align-items: center; gap: 8px; font-weight: 700;">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div class="faqs-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fa-solid fa-circle-question" style="color: var(--orange-main);"></i> Frequently Asked
+                        Questions (FAQs)
+                    </div>
+                </div>
+                <div class="faqs-accordion" id="faqs-accordion-container">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CUSTOMER SIGNUP VIEW -->
+        <section id="view-signup" class="view-section" style="display: none;">
+            <div style="margin-bottom: 15px; text-align: left;">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="showView('view-landing')">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Home
+                </button>
+            </div>
+            <div class="login-container signup-container">
+                <div class="login-banner">
+                    <div>
+                        <span class="cnc-mark">WC</span>
+                        <h2>Join Wall Crafter</h2>
+                        <p>Create an account to save products, track orders, and make checkout easier.</p>
+                    </div>
+                    <div style="font-size: 0.82rem; opacity: 0.85;"><i class="fa-solid fa-shield-halved"></i> Secure customer account</div>
+                </div>
+                <div class="login-form-wrapper">
+                    <h3>Create Your Account</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-body);">Enter your details to get started with Wall Crafter.</p>
+                    <form id="signup-form" onsubmit="handleSignupSubmit(event)">
+                        <div class="form-group">
+                            <label for="signup-name"><i class="fa-regular fa-user"></i> Full Name</label>
+                            <input type="text" id="signup-name" class="form-control" placeholder="e.g. Ali Raza" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email"><i class="fa-regular fa-envelope"></i> Email Address</label>
+                            <input type="email" id="signup-email" class="form-control" placeholder="e.g. ali@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password"><i class="fa-solid fa-lock"></i> Password</label>
+                            <input type="password" id="signup-password" class="form-control" minlength="6" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                            <i class="fa-solid fa-user-plus"></i> Create Account
+                        </button>
+                        <p class="auth-switch-text">Already have an account?
+                            <button type="button" class="auth-switch-link" onclick="showView('view-login')">Login here</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. CUSTOMER LOGIN SCREEN VIEW -->
+        <section id="view-login" class="view-section" style="display: none;">
+            <div style="margin-bottom: 15px; text-align: left;">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="showView('view-landing')">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Home
+                </button>
+            </div>
+
+            <div class="login-container">
+                <div class="login-banner">
+                    <div>
+                        <div
+                            style="background: white; padding: 6px 12px; border-radius: 6px; display: inline-block; margin-bottom: 15px;">
+                            <img src="assets/logo.png" alt="SkillzHub Logo"
+                                style="height: 32px !important; width: auto;">
+                        </div>
+                        <h2>Student Learning Portal</h2>
+                        <p>Access your enrolled courses, video lectures, assignments, and verified certificates.</p>
+                    </div>
+
+                    <div style="font-size: 0.82rem; opacity: 0.85;">
+                        <i class="fa-solid fa-shield-halved"></i> SkillzHub Official Student Portal
+                    </div>
+                </div>
+
+                <div class="login-form-wrapper">
+                    <h3>Sign In to Account</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-body);">Enter the email and password provided by
+                        SkillzHub Admin.</p>
+
+                    <div class="no-signup-notice">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div>
+                            <strong>Account Creation:</strong> Submit your enrollment request & Trx ID. Admin verifies
+                            your payment and issues your login credentials.
+                        </div>
+                    </div>
+
+                    <form id="login-form" onsubmit="handleLoginSubmit(event)">
+                        <div class="form-group">
+                            <label for="login-email"><i class="fa-regular fa-envelope"></i> Email Address</label>
+                            <input type="email" id="login-email" class="form-control" placeholder="e.g. usman@gmail.com"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password"><i class="fa-solid fa-lock"></i> Password</label>
+                            <div class="password-input-wrap">
+                                <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+                                <button type="button" class="password-toggle-btn" data-target="login-password" aria-label="Show password" title="Show password">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                            <i class="fa-solid fa-right-to-bracket"></i> Login
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. STUDENT DASHBOARD VIEW -->
+        <section id="view-student" class="view-section" style="display: none;">
+            <div class="welcome-banner">
+                <div>
+                    <h2>Welcome back, <span id="student-welcome-name">Student</span>! 👋</h2>
+                    <p>Continue watching your video lectures and complete your assignments.</p>
+                </div>
+                <div
+                    style="background: rgba(255,255,255,0.15); padding: 12px 20px; border-radius: var(--radius-md); text-align: center;">
+                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;">
+                        Enrolled Courses</div>
+                    <div style="font-size: 1.6rem; font-weight: 800;" id="student-enrolled-count">0</div>
+                </div>
+            </div>
+
+            <!-- Course Filters & Title -->
+            <div class="section-header">
+                <div class="section-title">
+                    <i class="fa-solid fa-box-open"></i> My Products & Account
+                </div>
+                <div class="filter-tabs">
+                    <button type="button" class="tab-btn active" id="tab-my-courses"
+                        onclick="setStudentCourseFilter('my')">My Enrolled Courses</button>
+                    <button type="button" class="tab-btn" id="tab-all-courses"
+                        onclick="setStudentCourseFilter('all')">All Courses</button>
+                </div>
+            </div>
+
+            <!-- Student Courses Grid -->
+            <div class="courses-grid" id="student-courses-grid">
+                <!-- Dynamic Course Cards -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Application Footer -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <div class="brand-logo" onclick="showView('view-landing')">
+                    <span class="cnc-mark">WC</span><span class="brand-name">Wall Crafter</span>
+                </div>
+                    <p style="font-size: 0.88rem; color: #a0aec0; margin-top: 12px;">Wall Crafter is a curated collection of decorative panels, screens, railings, and custom wall designs.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="showView('view-landing')">Home Page</a></li>
+                    <li><a href="javascript:void(0)" onclick="showView('view-about')">About Us</a></li>
+                    <li><a href="javascript:void(0)" onclick="showView('view-courses')">Product Catalog</a></li>
+                    <li><a href="javascript:void(0)" onclick="showView('view-contact')">Contact Page</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Popular Products</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="showView('view-courses')">Decorative Panels</a></li>
+                    <li><a href="javascript:void(0)" onclick="showView('view-courses')">Geometric Screens</a></li>
+                    <li><a href="javascript:void(0)" onclick="showView('view-courses')">Modern Railings</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Support</h4>
+                <p style="font-size: 0.88rem; color: #a0aec0;"><i class="fa-solid fa-phone"
+                        style="color: var(--orange-main);"></i> +92 300 1234567</p>
+                <p style="font-size: 0.88rem; color: #a0aec0; margin-top: 6px;"><i class="fa-solid fa-envelope"
+                        style="color: var(--orange-main);"></i> info@skillzhub.com</p>
+                <p style="font-size: 0.88rem; color: #a0aec0; margin-top: 6px;"><i class="fa-solid fa-location-dot"
+                        style="color: var(--orange-main);"></i> Gulberg III, Lahore, PK</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>&copy; 2026 Wall Crafter. All Rights Reserved.</div>
+            <div style="display: flex; gap: 15px;">
+            </div>
+        </div>
+    </footer>
+
+    <!-- ACCOUNT SETTINGS MODAL -->
+    <div class="modal-overlay" id="account-settings-modal">
+        <div class="modal-box account-settings-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-gear" style="color: var(--orange-main);"></i> Account Settings</h3>
+                <button type="button" class="btn btn-icon btn-secondary" onclick="closeModal('account-settings-modal')" aria-label="Close account settings">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="account-settings-body">
+                <div class="account-settings-avatar"><i class="fa-solid fa-user"></i></div>
+                <form id="account-settings-form" onsubmit="handleAccountSettingsSubmit(event)">
+                    <div class="form-group">
+                        <label for="account-settings-name">Name</label>
+                        <input type="text" id="account-settings-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="account-settings-email">Email</label>
+                        <input type="email" id="account-settings-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="account-settings-password">New Password</label>
+                        <input type="password" id="account-settings-password" class="form-control" minlength="6" placeholder="Leave blank to keep current password">
+                    </div>
+                    <div class="form-group">
+                        <label for="account-settings-photo">Profile Photo</label>
+                        <input type="file" id="account-settings-photo" class="form-control" accept="image/*" onchange="previewAccountPhoto(event)">
+                        <img id="account-settings-preview" class="account-settings-preview" src="" alt="Profile preview">
+                    </div>
+                    <div class="account-settings-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeModal('account-settings-modal')">Cancel</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN REQUIRED MODAL -->
+    <div class="modal-overlay auth-required-overlay" id="auth-required-modal">
+        <div class="modal-box auth-required-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-lock" style="color: var(--orange-main);"></i> Account Required</h3>
+                <button type="button" class="btn btn-icon btn-secondary" onclick="closeModal('auth-required-modal')" aria-label="Close account prompt">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="auth-required-body">
+                <div class="auth-required-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                <h3>Sign in to continue shopping</h3>
+                <p>Create an account or login before viewing product details, adding items to your cart, or placing an order.</p>
+                <div class="auth-required-actions">
+                    <button type="button" class="btn btn-outline" onclick="closeModal('auth-required-modal'); showView('view-signup')">
+                        <i class="fa-solid fa-user-plus"></i> Sign Up
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="closeModal('auth-required-modal'); showView('view-login')">
+                        <i class="fa-solid fa-right-to-bracket"></i> Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div class="modal-overlay" id="product-detail-modal">
+        <div class="modal-box product-detail-box">
+            <div class="modal-header">
+                <div>
+                    <span class="eyebrow" id="product-detail-category">Product</span>
+                    <h3 id="product-detail-title">Product Details</h3>
+                </div>
+                <button type="button" class="btn btn-icon btn-secondary" onclick="closeModal('product-detail-modal')" aria-label="Close product details">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="product-detail-content">
+                <div class="product-detail-media">
+                    <div class="product-main-image-wrap">
+                        <img id="product-detail-main-image" src="" alt="Product preview">
+                    </div>
+                    <div class="product-gallery" id="product-detail-gallery"></div>
+                </div>
+                <div class="product-detail-copy">
+                    <span class="product-detail-kicker">Wall Crafter Collection</span>
+                    <div class="product-detail-price" id="product-detail-price">Rs. 0</div>
+                    <p id="product-detail-description"></p>
+                    <div class="product-detail-actions">
+                        <button type="button" class="btn btn-orange" id="product-detail-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                        <button type="button" class="btn btn-primary" id="product-detail-buy"><i class="fa-solid fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHOPPING CART DRAWER -->
+    <div class="modal-overlay cart-overlay" id="cart-drawer">
+        <aside class="cart-drawer-box" role="dialog" aria-label="Shopping cart">
+            <div class="cart-drawer-header">
+                <div><span class="eyebrow">YOUR BAG</span><h2>Shopping Cart</h2></div>
+                <button type="button" class="btn btn-icon btn-secondary" onclick="closeModal('cart-drawer')" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-drawer-footer">
+                <div class="cart-total-row"><span>Order total</span><strong id="cart-total">Rs. 0</strong></div>
+                <button type="button" class="btn btn-orange" onclick="checkoutCart()"><i class="fa-solid fa-lock"></i> Secure Checkout</button>
+                <small>Payment is verified manually after you submit your receipt.</small>
+            </div>
+        </aside>
+    </div>
+
+    <!-- PAYMENT & ORDER REQUEST MODAL -->
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal-box" style="max-width: 700px;">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-money-bill-transfer" style="color: var(--orange-main);"></i> Checkout & Payment Details</h3>
+                <button type="button" class="btn btn-icon btn-secondary" onclick="closeModal('payment-modal')"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="payment-form" onsubmit="handlePaymentSubmit(event)">
+                <input type="hidden" id="pay-course-id" value="">
+                <div class="modal-body">
+                    <div
+                        style="background: rgba(10, 76, 138, 0.05); padding: 16px; border-radius: var(--radius-md); margin-bottom: 20px; border-left: 4px solid var(--blue-main);">
+                        <div style="font-size: 0.85rem; color: var(--text-body);">Your Product:</div>
+                        <h4 style="font-size: 1.2rem; color: var(--blue-dark);" id="pay-course-title">Course Title</h4>
+                        <div style="font-weight: 800; font-size: 1.1rem; color: var(--orange-main); margin-top: 4px;"
+                            id="pay-course-price">Fee: Rs. 15,000</div>
+                    </div>
+
+                    <label
+                        style="font-weight: 700; color: var(--blue-dark); font-size: 0.95rem; margin-bottom: 8px; display: block;">
+                        1. Select Official Payment Account:
+                    </label>
+
+                    <div class="payment-methods-grid">
+                        <div class="payment-card selected" id="method-jazzcash"
+                            onclick="selectPaymentMethod('jazzcash')">
+                            <h4><i class="fa-solid fa-mobile-screen-button" style="color: var(--orange-main);"></i>
+                                JazzCash / EasyPaisa</h4>
+                            <div style="font-size: 0.8rem; color: var(--text-body);">Mobile Wallet Transfer</div>
+                        </div>
+                        <div class="payment-card" id="method-meezan" onclick="selectPaymentMethod('meezan')">
+                            <h4><i class="fa-solid fa-building-columns" style="color: var(--blue-main);"></i> Meezan
+                                Bank</h4>
+                            <div style="font-size: 0.8rem; color: var(--text-body);">Online Bank Transfer / ATM</div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Account Details Container -->
+                    <div class="payment-details-box" id="payment-details-display">
+                        <div class="detail-row"><span>Account Title:</span> <strong id="pay-acc-title">Wall Crafter</strong></div>
+                        <div class="detail-row"><span>Account / Phone No:</span> <strong
+                                id="pay-acc-num">0300-1234567</strong></div>
+                        <div class="detail-row" id="pay-iban-row" style="display: none;"><span>IBAN:</span> <strong
+                                id="pay-acc-iban">PK92MEZN0001020105849302</strong></div>
+                        <p style="font-size: 0.8rem; color: var(--text-body); margin-top: 10px; border-top: 1px dashed var(--border-color); padding-top: 8px;"
+                            id="pay-acc-instructions">
+                            Send course fee to the account above and enter your Transaction ID (Trx ID) below.
+                        </p>
+                    </div>
+
+                    <label
+                        style="font-weight: 700; color: var(--blue-dark); font-size: 0.95rem; margin-bottom: 8px; display: block;">
+                        2. Enter Your Delivery & Payment Details:
+                    </label>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label for="pay-student-name">Full Name *</label>
+                            <input type="text" id="pay-student-name" class="form-control" placeholder="e.g. Hammad Ali"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pay-student-phone">WhatsApp / Phone *</label>
+                            <input type="text" id="pay-student-phone" class="form-control"
+                                placeholder="e.g. 0300-9876543" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pay-student-email">Email Address (Credentials will be sent here) *</label>
+                        <input type="email" id="pay-student-email" class="form-control"
+                            placeholder="e.g. hammad@gmail.com" required>
+                    </div>
+
+                            <div class="form-group">
+                            <label for="pay-delivery-address"><i class="fa-solid fa-location-dot"></i> Full Delivery Address *</label>
+                            <textarea id="pay-delivery-address" class="form-control" rows="3"
+                                placeholder="House/Shop no., street, area, city, and any delivery instructions" required></textarea>
+                            </div>
+
+                    <div class="form-group"
+                        style="background: #fff8f3; padding: 15px; border-radius: var(--radius-md); border: 1.5px solid var(--orange-main);">
+                        <label for="pay-trx-id" style="color: var(--orange-main); font-size: 0.95rem;">
+                            <i class="fa-solid fa-receipt"></i> Transaction ID (Trx ID) *
+                        </label>
+                        <input type="text" id="pay-trx-id" class="form-control" placeholder="e.g. TRX998877123" required
+                            style="border-color: var(--orange-main); font-weight: 700;">
+                        <span style="font-size: 0.76rem; color: var(--text-body); margin-top: 4px; display: block;">
+                            Enter the transaction number from your payment receipt.
+                        </span>
+                    </div>
+
+                    <div class="form-group"
+                        style="background: #f8fafc; padding: 15px; border-radius: var(--radius-md); border: 1.5px dashed var(--blue-light); margin-top: 15px;">
+                        <label for="pay-trx-screenshot"
+                            style="color: var(--blue-dark); font-size: 0.95rem; font-weight: 700; display: block; margin-bottom: 6px;">
+                            <i class="fa-solid fa-image" style="color: var(--orange-main);"></i> Payment Receipt
+                            Screenshot *
+                        </label>
+                        <input type="file" id="pay-trx-screenshot" class="form-control" accept="image/*" required
+                            onchange="previewPaymentScreenshot(event)">
+                        <span style="font-size: 0.76rem; color: var(--text-body); margin-top: 4px; display: block;">
+                            Attach your JazzCash / EasyPaisa / Bank transfer receipt. This is required to place the order.
+                        </span>
+                        <div id="pay-screenshot-preview-container"
+                            style="display: none; margin-top: 10px; text-align: center;">
+                            <img id="pay-screenshot-preview" src="" alt="Screenshot Preview"
+                                style="max-height: 140px; border-radius: 8px; border: 1px solid var(--border-color); object-fit: contain; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        onclick="closeModal('payment-modal')">Cancel</button>
+                    <button type="submit" class="btn btn-orange"><i class="fa-solid fa-paper-plane"></i> Submit Payment
+                        & Place Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- VIEW PAYMENT SCREENSHOT MODAL (ADMIN) -->
+    <div class="modal-overlay" id="screenshot-modal">
+        <div class="modal-box" style="max-width: 650px;">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-file-invoice-dollar" style="color: var(--orange-main);"></i> Payment Receipt
+                    Screenshot</h3>
+                <button type="button" class="btn btn-icon btn-secondary" onclick="closeModal('screenshot-modal')"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="text-align: center; padding: 20px;">
+                <img id="screenshot-modal-img" src="" alt="Payment Receipt"
+                    style="max-width: 100%; max-height: 65vh; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 1px solid var(--border-color);">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('screenshot-modal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CREATE / EDIT STUDENT MODAL -->
+    <div class="modal-overlay" id="user-modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="user-modal-title"><i class="fa-solid fa-user-plus" style="color: var(--orange-main);"></i>
+                    Create New Student Account</h3>
+                <button type="button" class="btn btn-icon btn-secondary" onclick="closeModal('user-modal')"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="user-form" onsubmit="handleSaveUser(event)">
+                <input type="hidden" id="edit-user-id" value="">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="modal-name"><i class="fa-solid fa-user"></i> Full Name</label>
+                        <input type="text" id="modal-name" class="form-control" placeholder="e.g. Muhammad Hamza"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-email"><i class="fa-solid fa-envelope"></i> Login Email</label>
+                        <input type="email" id="modal-email" class="form-control" placeholder="e.g. hamza@gmail.com"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-password"><i class="fa-solid fa-key"></i> Assigned Password</label>
+                        <input type="text" id="modal-password" class="form-control" placeholder="e.g. student123"
+                            required>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <label style="font-weight: 700; color: var(--blue-dark); font-size: 0.95rem;">
+                            <i class="fa-solid fa-check-double" style="color: var(--orange-main);"></i> Assign Courses
+                            to Student:
+                        </label>
+                        <p style="font-size: 0.8rem; color: var(--text-body); margin-bottom: 10px;">Select which courses
+                            this student is permitted to access upon login.</p>
+
+                        <div class="courses-checkbox-grid" id="modal-courses-checkboxes">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('user-modal')">Cancel</button>
+                    <button type="submit" class="btn btn-orange"><i class="fa-solid fa-floppy-disk"></i> Save Student
+                        Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- COURSE CLASSROOM / VIDEO PLAYER MODAL -->
+    <div class="player-modal" id="player-modal">
+        <div class="player-header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="closePlayerModal()">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+                </button>
+                <div>
+                    <h3 id="player-course-title">Course Title</h3>
+                    <div style="font-size: 0.78rem; opacity: 0.8;" id="player-instructor-name">Instructor</div>
+                </div>
+            </div>
+            <div id="player-cert-btn-container">
+                <!-- Certificate button rendered if completed 100% -->
+            </div>
+        </div>
+
+        <div class="player-body">
+            <!-- Video & Lesson Details -->
+            <div class="player-main-content">
+                <div class="video-frame-wrapper">
+                    <iframe id="video-iframe" src="" allowfullscreen></iframe>
+                </div>
+
+                <div class="lesson-meta-bar">
+                    <div>
+                        <h2 id="player-lesson-title">Lesson Title</h2>
+                        <p id="player-lesson-summary"
+                            style="font-size: 0.9rem; color: var(--text-body); margin-top: 5px;">Lesson description
+                            summary...</p>
+                    </div>
+                    <button type="button" class="btn btn-orange" id="btn-toggle-lesson-complete"
+                        onclick="toggleCurrentLessonCompletion()">
+                        <i class="fa-solid fa-circle-check"></i> Mark Lesson as Complete
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modules & Lessons Sidebar -->
+            <div class="player-sidebar">
+                <div class="sidebar-title">
+                    <h4 style="font-size: 1rem; margin-bottom: 6px;"><i class="fa-solid fa-list-check"
+                            style="color: var(--orange-main);"></i> Course Curriculum</h4>
+                    <div class="progress-container" style="margin-bottom: 0;">
+                        <div class="progress-info">
+                            <span>Course Progress</span>
+                            <span id="player-progress-text">0%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="player-progress-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="player-modules-list" style="flex: 1; overflow-y: auto;">
+                    <!-- Modules & Lessons List rendered via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CERTIFICATE GENERATOR MODAL -->
+    <div class="modal-overlay" id="certificate-modal">
+        <div class="modal-box" style="max-width: 750px;">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-award" style="color: var(--orange-main);"></i> Course Completion Certificate
+                </h3>
+                <button type="button" class="btn btn-icon btn-secondary" onclick="closeModal('certificate-modal')"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="certificate-card" id="printable-certificate">
+                    <div class="cert-logo">
+                        <img src="assets/logo.png" alt="SkillzHub Logo" style="height: 36px !important;">
+                    </div>
+                    <div class="cert-title">Certificate of Completion</div>
+                    <p style="font-size: 0.95rem; color: var(--text-body);">This is proudly awarded to</p>
+                    <div class="cert-recipient" id="cert-student-name">Student Name</div>
+                    <p style="font-size: 1rem; margin: 15px 0;">for successfully mastering all modules in</p>
+                    <h3 style="font-size: 1.5rem; color: var(--blue-dark);" id="cert-course-name">Course Title</h3>
+
+                    <div
+                        style="margin-top: 35px; display: flex; justify-content: space-between; align-items: flex-end; padding: 0 40px;">
+                        <div style="text-align: left;">
+                            <div style="font-size: 0.8rem; color: var(--text-body);">Issue Date</div>
+                            <div style="font-weight: 700; color: var(--blue-dark);" id="cert-issue-date">2026-07-23
+                            </div>
+                        </div>
+                        <div
+                            style="width: 70px; height: 70px; background: var(--orange-glow); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--orange-main);">
+                            <i class="fa-solid fa-certificate"
+                                style="font-size: 2.2rem; color: var(--orange-main);"></i>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.8rem; color: var(--text-body);">Verified License</div>
+                            <div style="font-weight: 700; color: var(--blue-dark);" id="cert-code">SKILLZ-8932</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('certificate-modal')">Close</button>
+                <button type="button" class="btn btn-primary" onclick="window.print()"><i class="fa-solid fa-print"></i>
+                    Print / Save PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Application JavaScript Scripts -->
+    <script src="data.js?v=cnc2"></script>
+    <script src="app.js?v=cnc2"></script>
+</body>
+
+</html>
